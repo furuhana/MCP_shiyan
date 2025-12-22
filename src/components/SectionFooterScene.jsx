@@ -75,7 +75,7 @@ export default function SectionFooterScene() {
                     <div className="absolute top-[10px] left-0 w-full h-[90px] bg-[#427c60] rounded-[16px]"></div>
 
                     {/* Front Layer */}
-                    <div className="absolute top-0 left-0 w-full h-[90px] bg-[#427c60] rounded-[16px] flex items-center justify-center">
+                    <div className="absolute top-0 left-0 w-full h-[90px] bg-[#427c60] rounded-[16px] flex items-center justify-center shadow-[inset_0_-10px_0_#2F6652]">
                         <div className="flex items-center gap-[14px]">
                             <div className="w-[35px] h-[35px]">
                                 <IconCheck />
