@@ -10,7 +10,7 @@ import {
 export default function SectionFooterScene() {
     return (
         <div
-            className="absolute bottom-0 left-0 w-full h-[291px] pointer-events-none"
+            className="absolute bottom-0 left-0 w-full h-[291px] pointer-events-none bg-[#475163]"
             data-name="Section_Footer_Scene"
         >
             {/* Background Hill - Fill Container */}
