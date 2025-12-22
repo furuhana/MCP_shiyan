@@ -1,0 +1,40 @@
+.header {
+    /* x=55, y=250. */
+    margin-top: 33.2vw;
+    /* 250/752 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titleBox {
+    /* Frame 9 */
+    /* Rounded 20px. 
+     Fill? Maybe transparent or white? 
+     Figma metadata doesn't explicitly show fill for Frame 9, mostly text.
+     But "Who am I" (我是谁?) text color #96908c.
+  */
+    margin-bottom: 2vw;
+}
+
+.title {
+    font-size: 6vw;
+    /* 45px / 752 */
+    color: #96908c;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+.arrowBox {
+    /* Polygon 1 container */
+    /* rotated 180deg? 
+     Figma snippet: rotate-[180deg].
+  */
+    transform: rotate(180deg);
+}
+
+.arrow {
+    width: 7.1vw;
+    /* 53.6px / 752 */
+    height: auto;
+}

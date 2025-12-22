@@ -1,0 +1,32 @@
+.card {
+    position: relative;
+    width: 39.9vw;
+    /* 300 / 752 */
+    height: 23vw;
+    /* 173 / 752 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cardBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* z-index: 0; */
+}
+
+.text {
+    position: relative;
+    z-index: 2;
+    font-size: 4.9vw;
+    /* 37px / 752 */
+    color: #333;
+    /* Default black/dark grey? */
+    /* Need to verify text color. Frame 35 -> Text 2001:12 etc */
+    font-weight: bold;
+    /* Looks bold */
+}
