@@ -1,20 +1,44 @@
 import React from 'react';
+import { FIGMA_TOKENS } from '../config/FigmaDesignTokens';
 
-// Figma Node: Btn_Confirm_Primary
-// Composed of Layer_3D_Shadow and Layer_Surface_Front for 3D effect
 interface Props {
     onClick?: () => void;
     className?: string;
 }
 
 const Btn_Confirm_Primary: React.FC<Props> = ({ onClick, className = '' }) => {
-    return (
-        <div className={`relative h-14 w-full max-w-[200px] group cursor-pointer ${className}`} onClick={onClick}>
-            {/* Layer_3D_Shadow */}
-            <div className="absolute inset-0 bg-green-700 rounded-full translate-y-2 transition-transform" />
+    const t = FIGMA_TOKENS.Footer.Btn_Confirm_Primary;
 
-            {/* Layer_Surface_Front */}
-            <div className="absolute inset-0 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg active:translate-y-2 transition-transform border-b-4 border-green-600 active:border-b-0">
+    return (
+        <div
+            className={`relative group cursor-pointer ${className}`}
+            onClick={onClick}
+            style={{ width: t.width, height: t.height }}
+        >
+            {/* Layer_3D_Shadow (The definition of thickness) */}
+            <div
+                className="absolute inset-0 transition-transform"
+                style={{
+                    backgroundColor: t.Layer_3D_Shadow.color,
+                    borderRadius: t.Layer_3D_Shadow.borderRadius,
+                    top: t.Layer_3D_Shadow.offsetY, // This pushes the shadow down to create depth
+                    height: t.Layer_3D_Shadow.height,
+                }}
+            />
+
+            {/* Layer_Surface_Front (The clickable face) */}
+            <div
+                className="absolute inset-0 flex items-center justify-center active:translate-y-1 transition-transform"
+                style={{
+                    backgroundColor: t.Surface_Front.color,
+                    borderRadius: t.Surface_Front.borderRadius,
+                    height: t.Surface_Front.height,
+                    color: t.Text.color,
+                    fontSize: t.Text.fontSize,
+                    fontWeight: t.Text.fontWeight,
+                    fontFamily: t.Text.fontFamily,
+                }}
+            >
                 CONFIRM
             </div>
         </div>

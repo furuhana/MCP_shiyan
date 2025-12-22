@@ -1,18 +1,38 @@
 import React from 'react';
+import { FIGMA_TOKENS } from '../config/FigmaDesignTokens';
 
-// Figma Node: Container_Question_Whole
-// Includes Shape_Bubble_Tail (Absolute)
 const Container_Question_Whole: React.FC = () => {
+    const t = FIGMA_TOKENS.Question;
+
     return (
-        <div className="relative w-full px-6 py-8 flex items-center justify-center">
+        <div className="relative flex items-center justify-center" style={{ width: t.width }}>
             {/* Bubble Body */}
-            <div className="relative bg-white rounded-3xl p-6 shadow-xl w-full flex items-center justify-center min-h-[120px] z-10">
+            <div
+                className="relative flex items-center justify-center w-full z-10"
+                style={{
+                    backgroundColor: t.Bubble_Body.color,
+                    borderRadius: t.Bubble_Body.borderRadius,
+                    padding: t.Bubble_Body.padding,
+                    boxShadow: t.Bubble_Body.shadow,
+                }}
+            >
                 <h2 className="text-2xl font-bold text-gray-800 text-center">
                     What is the sound?
                 </h2>
 
-                {/* Shape_Bubble_Tail - Absolute positioning as requested */}
-                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-white rotate-45 transform" />
+                {/* Shape_Bubble_Tail - Absolute positioning from Tokens */}
+                <div
+                    className="absolute transform rotate-45"
+                    style={{
+                        backgroundColor: t.Shape_Bubble_Tail.color,
+                        width: t.Shape_Bubble_Tail.width,
+                        height: t.Shape_Bubble_Tail.height,
+                        bottom: t.Shape_Bubble_Tail.bottomOffset,
+                        left: t.Shape_Bubble_Tail.leftOffset,
+                        marginLeft: `calc(-1 * ${t.Shape_Bubble_Tail.width} / 2)`, // Center alignment fix
+                        zIndex: -1, // Behind the bubble logic if needed, or matched color
+                    }}
+                />
             </div>
         </div>
     );

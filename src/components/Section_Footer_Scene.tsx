@@ -1,17 +1,29 @@
 import React from 'react';
 import Btn_Confirm_Primary from './Btn_Confirm_Primary';
+import { FIGMA_TOKENS } from '../config/FigmaDesignTokens';
 
-// Figma Node: Section_Footer_Scene
-// Relative container, Bg_Shape_Hill fills bottom
 const Section_Footer_Scene: React.FC = () => {
-    return (
-        <div className="relative w-full h-[30vh] flex items-end justify-center pb-10">
-            {/* Bg_Shape_Hill */}
-            {/* Filling the footer area, acting as a hill/ground */}
-            <div className="absolute inset-0 bg-emerald-600 rounded-t-[40px] z-0" />
+    const t = FIGMA_TOKENS.Footer;
 
-            {/* Btn_Confirm_Primary - 3D Button */}
-            <div className="relative z-10 mb-4">
+    return (
+        <div
+            className="relative w-full flex items-end justify-center"
+            style={{ height: t.height, backgroundColor: t.bgColor }}
+        >
+            {/* Bg_Shape_Hill */}
+            <div
+                className="absolute inset-0 w-full z-0"
+                style={{
+                    backgroundColor: t.Bg_Shape_Hill.color,
+                    height: t.Bg_Shape_Hill.height,
+                    borderTopLeftRadius: t.Bg_Shape_Hill.borderRadiusTop,
+                    borderTopRightRadius: t.Bg_Shape_Hill.borderRadiusTop,
+                    bottom: 0,
+                }}
+            />
+
+            {/* Btn_Confirm_Primary */}
+            <div className="relative z-10 mb-12"> {/* MB-12 is a safe area default, user might want to tokenize this padding too */}
                 <Btn_Confirm_Primary />
             </div>
         </div>
