@@ -5,25 +5,21 @@ import SectionFooterScene from './SectionFooterScene';
 
 export default function ViewHomePage() {
     return (
-        <div className="relative w-full h-[100dvh] bg-[#d6cdc1] overflow-hidden flex flex-col justify-between items-center select-none" data-name="View_Home_Page">
-            {/* 
-        Layout Strategy:
-        Question Area: top-[130px] approx (from Figma: 129.65)
-        Options Area: top-[216px] approx (from Figma: 216.26)
-        Footer: bottom-0
-      */}
-
-            {/* Question Area */}
-            <div className="absolute top-[130px]" style={{ left: '50%', transform: 'translateX(-50%)' }}>
+        <div
+            className="relative w-full max-w-[430px] mx-auto h-[100dvh] bg-[#d6cdc1] overflow-hidden flex flex-col select-none"
+            data-name="View_Home_Page"
+        >
+            {/* Question Area - Top with margin */}
+            <div className="mt-12 w-full flex justify-center flex-none">
                 <ContainerQuestionWhole />
             </div>
 
-            {/* Options Area */}
-            <div className="absolute top-[216px]" style={{ left: '50%', transform: 'translateX(-50%)' }}>
+            {/* Options Area - Middle, Flex-1 to occupy space and center content */}
+            <div className="flex-1 w-full flex flex-col justify-center items-center">
                 <GridContainerOptions />
             </div>
 
-            {/* Footer Area */}
+            {/* Footer Area - Bottom, natural flow */}
             <SectionFooterScene />
         </div>
     );

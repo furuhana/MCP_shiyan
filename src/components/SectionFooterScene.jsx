@@ -9,13 +9,16 @@ import {
 
 export default function SectionFooterScene() {
     return (
-        <div className="relative w-full h-[291px] mt-auto pb-8 box-content pointer-events-none" data-name="Section_Footer_Scene">
-            {/* Background Hill */}
+        <div
+            className="relative w-full h-[291px] pb-[calc(20px+env(safe-area-inset-bottom))] box-content flex-none"
+            data-name="Section_Footer_Scene"
+        >
+            {/* Background Hill - Anchored to bottom */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[390px] h-[263px]">
                 <BgShapeHill />
             </div>
 
-            {/* Silhouette Man */}
+            {/* Silhouette Man - Centered horizontally, top positioned */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[13.66px] h-[28.83px]">
                 <IconSilhouetteMan />
             </div>
