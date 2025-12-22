@@ -9,7 +9,7 @@ import {
 
 export default function SectionFooterScene() {
     return (
-        <div className="absolute bottom-0 left-0 w-full h-[291px] pointer-events-none" data-name="Section_Footer_Scene">
+        <div className="relative w-full h-[291px] mt-auto pb-8 box-content pointer-events-none" data-name="Section_Footer_Scene">
             {/* Background Hill */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[390px] h-[263px]">
                 <BgShapeHill />

@@ -5,7 +5,7 @@ import SectionFooterScene from './SectionFooterScene';
 
 export default function ViewHomePage() {
     return (
-        <div className="relative w-full min-h-[100dvh] bg-[#d6cdc1] overflow-hidden flex flex-col items-center select-none" data-name="View_Home_Page">
+        <div className="relative w-full h-[100dvh] bg-[#d6cdc1] overflow-hidden flex flex-col justify-between items-center select-none" data-name="View_Home_Page">
             {/* 
         Layout Strategy:
         Question Area: top-[130px] approx (from Figma: 129.65)
