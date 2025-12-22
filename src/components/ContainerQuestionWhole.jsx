@@ -10,7 +10,7 @@ export default function ContainerQuestionWhole() {
             </div>
 
             {/* Tail positioned absolutely */}
-            <div className="absolute top-[56.5px] left-[153px] w-[27.8px] h-[10.5px]">
+            <div className="absolute top-[56.5px] left-1/2 -translate-x-1/2 w-[27.8px] h-[10.5px]">
                 <div className="w-full h-full rotate-180">
                     <ShapeBubbleTail />
                 </div>

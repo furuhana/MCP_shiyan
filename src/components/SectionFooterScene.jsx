@@ -16,7 +16,7 @@ export default function SectionFooterScene() {
             </div>
 
             {/* Silhouette Man */}
-            <div className="absolute top-0 left-[188px] w-[13.66px] h-[28.83px]">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[13.66px] h-[28.83px]">
                 <IconSilhouetteMan />
             </div>
 
