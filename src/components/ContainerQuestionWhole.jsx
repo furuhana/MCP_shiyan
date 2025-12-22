@@ -1,5 +1,5 @@
 import React from 'react';
-import { imgShapeBubbleTail } from '../assets/images';
+import { ShapeBubbleTail } from './Icons';
 
 export default function ContainerQuestionWhole() {
     return (
@@ -10,15 +10,9 @@ export default function ContainerQuestionWhole() {
             </div>
 
             {/* Tail positioned absolutely */}
-            {/* Based on Figma: left 152.55, top 56.53. Container width 332.95. 
-          152.55 is roughly center. 
-          Center of 333 is 166.5. 152.5 is slightly left?
-          Let's use the exact absolute coordinates from the parent's perspective or relative to this container.
-          The snippet showed: left-[152.55px] top-[56.53px]
-      */}
             <div className="absolute top-[56.5px] left-[153px] w-[27.8px] h-[10.5px]">
                 <div className="w-full h-full rotate-180">
-                    <img alt="" className="w-full h-full block" src={imgShapeBubbleTail} />
+                    <ShapeBubbleTail />
                 </div>
             </div>
         </div>
