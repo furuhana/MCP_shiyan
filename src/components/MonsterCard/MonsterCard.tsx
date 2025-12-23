@@ -11,35 +11,35 @@ const MonsterCard: React.FC = () => {
     if (!isVisible) return null;
 
     return (
-        <div className="flex flex-col w-full max-w-[400px] rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-[#F3F4F6] font-sans">
+        <div className="flex flex-col rounded-[32px] overflow-hidden shadow-2xl max-w-md mx-auto w-full font-sans bg-[#F3F5F9]">
             <Header title={data.title} onClose={handleClose} />
 
-            {/* Main Content Area */}
-            <div className="p-4 space-y-4">
+            {/* Main Content (Body) */}
+            <div className="bg-[#F3F5F9] p-5 flex flex-col h-full">
                 <RiskIndicator title={data.riskTitle} level={data.riskLevel} />
 
-                {/* Image Container with Floating Share Button */}
-                <div className="relative w-full aspect-square bg-white rounded-xl flex items-center justify-center border border-gray-100">
-                    {/* Placeholder for Monster Image */}
+                {/* White Inner Card */}
+                <div className="bg-white rounded-[20px] p-6 relative shadow-sm w-full mb-4">
+                    {/* Monster Image */}
                     <img
                         src="https://placehold.co/400x400/png?text=Monster"
                         alt="Monster"
-                        className="w-3/4 h-3/4 object-contain"
+                        className="w-full h-auto object-contain"
                     />
 
-                    {/* Share Button (Absolute) */}
+                    {/* Fixed Share Button (Absolute) */}
                     <button
                         onClick={handleShare}
-                        className="absolute bottom-4 right-4 w-10 h-10 flex items-center justify-center rounded-lg text-white shadow-md bg-[#5CB85C] hover:bg-green-600 transition-colors"
+                        className="absolute bottom-4 right-4 w-12 h-12 bg-[#5CB85C] rounded-xl flex items-center justify-center text-white shadow-lg z-10 hover:bg-green-600 transition-colors"
                         aria-label="Share"
                     >
-                        <Share size={20} color="white" />
+                        <Share size={24} color="white" />
                     </button>
                 </div>
 
-                {/* Description */}
-                <div className="text-sm text-gray-500 leading-relaxed bg-white p-3 rounded-lg mt-4">
-                    <p>
+                {/* Description (Preserved from previous step but adapting to flow) */}
+                <div className="bg-white rounded-lg p-3 mb-4 shadow-sm">
+                    <p className="text-sm text-gray-500 leading-relaxed">
                         {data.description}
                     </p>
                 </div>
@@ -48,8 +48,8 @@ const MonsterCard: React.FC = () => {
             </div>
 
             {/* Footer */}
-            <div className="bg-[#4B5563] p-4 flex justify-center items-center text-white font-medium">
-                <span>
+            <div className="bg-[#4B5563] h-14 flex items-center justify-center shrink-0">
+                <span className="text-white font-medium">
                     {data.footerTitle}
                 </span>
             </div>

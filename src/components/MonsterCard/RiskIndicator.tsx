@@ -8,16 +8,16 @@ interface RiskIndicatorProps {
 
 const RiskIndicator: React.FC<RiskIndicatorProps> = ({ title, level }) => {
     return (
-        <div className="flex justify-between items-center bg-white p-2 rounded-lg">
-            <span className="text-gray-700 font-medium">
+        <div className="bg-white rounded-lg p-3 mb-4 flex justify-between items-center shadow-sm w-full">
+            <span className="text-gray-700 font-bold">
                 {title}
             </span>
-            <div className="flex gap-1">
+            <div className="text-yellow-400 text-lg flex gap-1">
                 {[...Array(level)].map((_, i) => (
                     <Star
                         key={i}
-                        size={20}
-                        className="fill-[#fcd34d] text-[#fcd34d]"
+                        size={18}
+                        className="fill-current text-inherit"
                     />
                 ))}
             </div>
