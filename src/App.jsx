@@ -1,11 +1,9 @@
 import React from 'react'
-import HomeView from './HomeView'
+import ViewHomePage from './components/ViewHomePage'
 
 function App() {
   return (
-    <>
-      <HomeView />
-    </>
+    <ViewHomePage />
   )
 }
 

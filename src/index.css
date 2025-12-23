@@ -1,19 +1,11 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  /* Add any custom theme variables here if needed */
-}
-
-body {
-  background-color: #E3DCD5;
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  overflow-x: hidden;
-}
-
-@supports (padding-bottom: env(safe-area-inset-bottom)) {
+@layer base {
   body {
-    padding-bottom: env(safe-area-inset-bottom);
+    @apply bg-[#d6cdc1] m-0 p-0 text-[#96908c];
+    /* Prevent pull-to-refresh on mobile if needed, though viewport-fit=cover covers some */
+    overscroll-behavior-y: none;
   }
 }
