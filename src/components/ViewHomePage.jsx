@@ -37,7 +37,8 @@ export default function ViewHomePage() {
 
             {/* Section_Footer_Scene */}
             {/* FIX 3: Added mt-auto to push footer to bottom */}
-            <footer className="w-full relative mt-auto flex flex-col items-center pb-[calc(20px+env(safe-area-inset-bottom))]">
+            {/* FIX 4: Added bg-[#434D5F] to fill safe area */}
+            <footer className="w-full relative mt-auto flex flex-col items-center pb-[calc(20px+env(safe-area-inset-bottom))] bg-[#434D5F]">
 
                 {/* Silhouette Man */}
                 {/* FIX 1: Ensure inline SVG is used. The IconSilhouetteMan component returns an inline SVG. */}
