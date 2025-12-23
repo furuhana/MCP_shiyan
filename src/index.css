@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+
+  html,
   body {
     @apply bg-[#d6cdc1] m-0 p-0 text-[#96908c];
-    /* Prevent pull-to-refresh on mobile if needed, though viewport-fit=cover covers some */
+    /* Prevent pull-to-refresh on mobile (Safari rubber-banding) */
     overscroll-behavior-y: none;
   }
 }

@@ -39,7 +39,8 @@ export default function ViewHomePage() {
 
             {/* Section_Footer_Scene */}
             {/* REFACTOR: Removed mt-auto, relying on root justify-end. Added bg-[#434D5F] for safe area fix. */}
-            <footer className="w-full relative flex flex-col items-center pb-[calc(20px+env(safe-area-inset-bottom))] bg-[#434D5F] shrink-0">
+            {/* FIX 5: Safari White Edge Fix - Extra 2px padding and negative margin to cover sub-pixel gaps */}
+            <footer className="w-full relative flex flex-col items-center pb-[calc(20px+env(safe-area-inset-bottom)+2px)] -mb-[2px] bg-[#434D5F] shrink-0">
 
                 {/* Silhouette Man */}
                 <div className="absolute bottom-[calc(100%-10px)] z-20 w-[14px] h-[29px] text-[#475163]">

@@ -14,8 +14,8 @@ export const ShapeBubbleTail = (props) => (
     </svg>
 );
 
-export const BgShapeHill = (props) => (
-    <svg viewBox="0 0 390 263" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" {...props}>
+export const BgShapeHill = ({ className = '', ...props }) => (
+    <svg className={`block ${className}`} viewBox="0 0 390 263" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" {...props}>
         <path id="Bg_Shape_Hill" d="M390 33.4919C329.033 11.8129 263.371 0 194.942 0C126.556 0 60.9345 11.7978 0 33.4504V263H390V33.4919Z" fill="currentColor" />
     </svg>
 );
