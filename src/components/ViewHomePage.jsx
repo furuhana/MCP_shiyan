@@ -9,10 +9,12 @@ const OptionButton = ({ label }) => (
 
 export default function ViewHomePage() {
     return (
-        <div id="View_Home_Page" className="relative flex flex-col items-center justify-between w-full min-h-[100dvh] bg-custom-bg overflow-hidden viewport-fit-cover">
+        <div id="View_Home_Page" className="relative flex flex-col items-center justify-end gap-[140px] w-full min-h-[100dvh] bg-custom-bg overflow-hidden viewport-fit-cover">
+            {/* REFACTOR: Root uses justify-end and gap-[140px] as per Figma Auto Layout */}
 
             {/* Container_Main_Content */}
-            <main className="flex flex-col items-center w-[88%] mt-[60px] gap-[40px] z-10">
+            {/* Kept mt-[60px] as it respects original top padding/margin intent from Figma, though justify-end dominates positioning */}
+            <main className="flex flex-col items-center w-[88%] mt-[60px] gap-[40px] z-10 h-fit">
 
                 {/* Question Bubble Group */}
                 <div className="flex flex-col items-center w-full">
@@ -36,12 +38,10 @@ export default function ViewHomePage() {
             </main>
 
             {/* Section_Footer_Scene */}
-            {/* FIX 3: Added mt-auto to push footer to bottom */}
-            {/* FIX 4: Added bg-[#434D5F] to fill safe area */}
-            <footer className="w-full relative mt-auto flex flex-col items-center pb-[calc(20px+env(safe-area-inset-bottom))] bg-[#434D5F]">
+            {/* REFACTOR: Removed mt-auto, relying on root justify-end. Added bg-[#434D5F] for safe area fix. */}
+            <footer className="w-full relative flex flex-col items-center pb-[calc(20px+env(safe-area-inset-bottom))] bg-[#434D5F] shrink-0">
 
                 {/* Silhouette Man */}
-                {/* FIX 1: Ensure inline SVG is used. The IconSilhouetteMan component returns an inline SVG. */}
                 <div className="absolute bottom-[calc(100%-10px)] z-20 w-[14px] h-[29px] text-[#475163]">
                     <IconSilhouetteMan className="w-full h-full" />
                 </div>
@@ -68,11 +68,7 @@ export default function ViewHomePage() {
                     </div>
 
                     {/* Confirm Button */}
-                    {/* FIX 2: Fixed button layout and icon */}
                     <button className="relative w-[310px] h-[75px] bg-custom-green rounded-[20px] shadow-[inset_0px_-10px_0px_0px_#2f6652] flex items-center justify-center gap-x-2 group active:shadow-[inset_0px_-5px_0px_0px_#2f6652] active:translate-y-[5px] transition-all">
-                        {/* Removed duplicate icon divs and circle background that was causing issues.
-                             Used direct flex layout 'gap-x-2' for centering. 
-                         */}
                         <div className="w-[35px] h-[35px]">
                             <IconCheck className="w-full h-full text-[#5e9e7b]" />
                         </div>
