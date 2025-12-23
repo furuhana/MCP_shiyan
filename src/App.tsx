@@ -1,14 +1,14 @@
-import MonsterCard from './components/MonsterCard';
+import { MonsterCard } from './components/MonsterCard';
+import monsterImage from './assets/monster.png';
 
 function App() {
-  return (
-    <div className="min-h-screen bg-gray-200 flex items-center justify-center p-4">
-      {/* Container to simulate mobile screen or restricted width if needed */}
-      <div className="w-full max-w-[480px]">
-        <MonsterCard />
-      </div>
-    </div>
-  );
+    return (
+        <div className="flex justify-center items-center min-h-screen w-full bg-slate-200">
+            <MonsterCard
+                imageUrl={monsterImage}
+            />
+        </div>
+    )
 }
 
-export default App;
+export default App

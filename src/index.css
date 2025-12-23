@@ -3,9 +3,12 @@
 @tailwind utilities;
 
 body {
-  background-color: #f3f4f6; /* light gray to see the card better */
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  place-items: center;
+  min-width: 320px;
   min-height: 100vh;
+  background-color: #f3f4f6;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
