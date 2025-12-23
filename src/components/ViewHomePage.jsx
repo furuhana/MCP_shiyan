@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconCheck, ShapeBubbleTail, BgShapeHill, IconSilhouetteMan, IconLogo, IconLogoLine } from './icons';
+import { IconCheck, ShapeBubbleTail, BgShapeHill, IconSilhouetteMan, IconLogo, IconLogoLine } from './Icons';
 
 const OptionButton = ({ label }) => (
     <button className="flex items-center justify-center w-full aspect-[153/102] bg-[#a08c82] rounded-[10px] shadow-[inset_0px_0px_20px_rgba(0,0,0,0.1)] active:scale-95 transition-transform duration-100">
