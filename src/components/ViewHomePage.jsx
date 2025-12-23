@@ -36,9 +36,11 @@ export default function ViewHomePage() {
             </main>
 
             {/* Section_Footer_Scene */}
+            {/* FIX 3: Added mt-auto to push footer to bottom */}
             <footer className="w-full relative mt-auto flex flex-col items-center pb-[calc(20px+env(safe-area-inset-bottom))]">
 
                 {/* Silhouette Man */}
+                {/* FIX 1: Ensure inline SVG is used. The IconSilhouetteMan component returns an inline SVG. */}
                 <div className="absolute bottom-[calc(100%-10px)] z-20 w-[14px] h-[29px] text-[#475163]">
                     <IconSilhouetteMan className="w-full h-full" />
                 </div>
@@ -65,33 +67,15 @@ export default function ViewHomePage() {
                     </div>
 
                     {/* Confirm Button */}
-                    <button className="relative w-[310px] h-[75px] bg-custom-green rounded-[20px] shadow-[inset_0px_-10px_0px_0px_#2f6652] flex items-center justify-center group active:shadow-[inset_0px_-5px_0px_0px_#2f6652] active:translate-y-[5px] transition-all">
-                        <div className="flex items-center gap-3 mt-[-5px] group-active:mt-0">
-                            <div className="w-[35px] h-[35px] text-[#5e9e7b] bg-white rounded-full p-1 opacity-20">
-                                {/* NOTE: The check icon in design looked like it was inside a circle or just checking. 
-                       In the Figma code it was an image. I'll use the check icon directly. 
-                       Wait, the design has a checkmark icon. 
-                   */}
-                                <IconCheck className="w-full h-full text-white" />
-                            </div>
-                            {/* Actually the check is just a check mark on the button. 
-                    The Figma code: <img src={imgIconCheck} ... /> 
-                    It didn't show bg circle in code but maybe in image.
-                    I will just render the icon.
-                */}
-                            <div className="w-[35px] h-[35px]">
-                                <IconCheck className="w-full h-full text-[#2f6652] opacity-50 mixing-blend-multiply" />
-                            </div>
-                            <span className="text-[#5e9e7b] text-[36px] font-normal tracking-wide ml-2">确认</span>
+                    {/* FIX 2: Fixed button layout and icon */}
+                    <button className="relative w-[310px] h-[75px] bg-custom-green rounded-[20px] shadow-[inset_0px_-10px_0px_0px_#2f6652] flex items-center justify-center gap-x-2 group active:shadow-[inset_0px_-5px_0px_0px_#2f6652] active:translate-y-[5px] transition-all">
+                        {/* Removed duplicate icon divs and circle background that was causing issues.
+                             Used direct flex layout 'gap-x-2' for centering. 
+                         */}
+                        <div className="w-[35px] h-[35px]">
+                            <IconCheck className="w-full h-full text-[#5e9e7b]" />
                         </div>
-                        {/* The button text color in Figma was #5e9e7b? No, that's dark green. 
-                 Wait, Figma code says: text-[#5e9e7b]. But background IS #468361. 
-                 Text #5e9e7b on #468361 is low contrast. 
-                 Let's check the image. The text "确认" looks light green or white?
-                 In the uploaded image it looks like a lighter green.
-                 Light green on Dark green. 
-                 Okay, I'll stick to the code #5e9e7b.
-             */}
+                        <span className="text-[#5e9e7b] text-[36px] font-normal tracking-wide">确认</span>
                     </button>
 
                 </div>
