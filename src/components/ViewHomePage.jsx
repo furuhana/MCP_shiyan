@@ -9,12 +9,11 @@ const OptionButton = ({ label }) => (
 
 export default function ViewHomePage() {
     return (
-        <div id="View_Home_Page" className="relative flex flex-col items-center justify-end gap-[140px] w-full min-h-[100dvh] bg-custom-bg overflow-hidden viewport-fit-cover">
-            {/* REFACTOR: Root uses justify-end and gap-[140px] as per Figma Auto Layout */}
+        <div id="View_Home_Page" className="relative flex flex-col items-center justify-start w-full min-h-[100dvh] bg-custom-bg overflow-hidden viewport-fit-cover">
+            {/* REFACTOR: Changed Root to justify-start to avoid overlap with absolute footer. Kept min-h screen. */}
 
             {/* Container_Main_Content */}
-            {/* Kept mt-[60px] as it respects original top padding/margin intent from Figma, though justify-end dominates positioning */}
-            <main className="flex flex-col items-center w-[88%] mt-[60px] gap-[40px] z-10 h-fit">
+            <main className="flex flex-col items-center w-[88%] mt-[60px] gap-[40px] z-10 h-fit pb-[350px]">
 
                 {/* Question Bubble Group */}
                 <div className="flex flex-col items-center w-full">
@@ -38,23 +37,25 @@ export default function ViewHomePage() {
             </main>
 
             {/* Section_Footer_Scene */}
-            {/* REFACTOR: Removed mt-auto, relying on root justify-end. Added bg-[#434D5F] for safe area fix. */}
-            {/* FIX 5: Safari White Edge Fix - Extra 2px padding and negative margin to cover sub-pixel gaps */}
-            <footer className="w-full relative flex flex-col items-center pb-[calc(20px+env(safe-area-inset-bottom)+2px)] -mb-[2px] bg-[#434D5F] shrink-0">
-
-                {/* Silhouette Man */}
-                <div className="absolute bottom-[calc(100%-10px)] z-20 w-[14px] h-[29px] text-[#475163]">
-                    <IconSilhouetteMan className="w-full h-full" />
-                </div>
+            {/* FIX 6: Strict Absolute Positioning as requested. */}
+            <div className="absolute bottom-0 left-0 w-full bg-[#434D5F] pb-[calc(20px+env(safe-area-inset-bottom))] z-0">
 
                 {/* Hill Background */}
-                <div className="absolute bottom-0 left-0 w-full h-[263px] text-[#475163] z-0">
-                    <BgShapeHill className="w-full h-full" />
+                <div className="w-full text-[#475163]">
+                    {/* FIX 7: Added block w-full align-bottom to SVG */}
+                    <BgShapeHill className="w-full block align-bottom" />
                 </div>
 
-                {/* Content Wrapper inside Hill */}
-                <div className="relative z-10 flex flex-col items-center w-full pt-[60px] gap-6">
+                {/* Silhouette Man */}
+                <div className="absolute bottom-[calc(100%-10px)] left-0 w-full flex justify-center z-20 pointer-events-none">
+                    <div className="w-[14px] h-[29px] text-[#475163] -mb-[30px] z-20">
+                        <IconSilhouetteMan className="w-full h-full" />
+                    </div>
+                </div>
 
+
+                {/* Content Wrapper inside Hill */}
+                <div className="absolute inset-0 flex flex-col items-center justify-end pb-[calc(20px+env(safe-area-inset-bottom)+50px)] gap-6 z-10">
                     {/* Disclaimer Row */}
                     <div className="flex flex-row items-center justify-center gap-3 text-[#667584]">
                         <div className="w-[20px] h-[20px]">
@@ -75,9 +76,9 @@ export default function ViewHomePage() {
                         </div>
                         <span className="text-[#5e9e7b] text-[36px] font-normal tracking-wide">确认</span>
                     </button>
-
                 </div>
-            </footer>
+
+            </div>
         </div>
     );
 }
