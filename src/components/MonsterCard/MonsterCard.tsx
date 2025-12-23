@@ -11,35 +11,35 @@ const MonsterCard: React.FC = () => {
     if (!isVisible) return null;
 
     return (
-        <div className="flex flex-col w-full shadow-2xl rounded-[28px] overflow-hidden font-sans">
+        <div className="flex flex-col w-full max-w-[400px] rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-[#F3F4F6] font-sans">
             <Header title={data.title} onClose={handleClose} />
 
             {/* Main Content Area */}
-            <div className="bg-[#efeff4] flex flex-col gap-[38px] p-[40px] w-full">
+            <div className="p-4 space-y-4">
                 <RiskIndicator title={data.riskTitle} level={data.riskLevel} />
 
-                {/* Image Container */}
-                <div className="bg-white p-[20px] rounded-[12px] relative w-full aspect-square flex items-center justify-center">
+                {/* Image Container with Floating Share Button */}
+                <div className="relative w-full aspect-square bg-white rounded-xl flex items-center justify-center border border-gray-100">
                     {/* Placeholder for Monster Image */}
                     <img
                         src="https://placehold.co/400x400/png?text=Monster"
                         alt="Monster"
-                        className="w-full h-full object-contain"
+                        className="w-3/4 h-3/4 object-contain"
                     />
 
                     {/* Share Button (Absolute) */}
                     <button
                         onClick={handleShare}
-                        className="absolute bottom-4 right-4 bg-[#57b271] size-[60px] rounded-[12px] flex items-center justify-center shadow-lg hover:bg-[#469e60] transition-colors"
+                        className="absolute bottom-4 right-4 w-10 h-10 flex items-center justify-center rounded-lg text-white shadow-md bg-[#5CB85C] hover:bg-green-600 transition-colors"
                         aria-label="Share"
                     >
-                        <Share size={32} color="white" />
+                        <Share size={20} color="white" />
                     </button>
                 </div>
 
                 {/* Description */}
-                <div className="bg-white p-[24px] rounded-[12px]">
-                    <p className="text-[#646a74] text-[22px] leading-relaxed">
+                <div className="text-sm text-gray-500 leading-relaxed bg-white p-3 rounded-lg mt-4">
+                    <p>
                         {data.description}
                     </p>
                 </div>
@@ -48,11 +48,8 @@ const MonsterCard: React.FC = () => {
             </div>
 
             {/* Footer */}
-            <div className="bg-[#475163] h-[112px] flex items-center justify-center relative">
-                {/* Logo position would be absolute left if we had it, purely decorative */}
-                <div className="absolute left-0 top-0 h-full w-[117px] bg-[#3a4252]/50" /> {/* Mock logo area */}
-
-                <span className="text-white text-[52px]">
+            <div className="bg-[#4B5563] p-4 flex justify-center items-center text-white font-medium">
+                <span>
                     {data.footerTitle}
                 </span>
             </div>
